@@ -1,0 +1,12 @@
+{
+  "name": "darshan-locker",
+  "version": "1.0.0",
+  "description": "Temple locker pass booking with a crowd forecast and a staff dashboard.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

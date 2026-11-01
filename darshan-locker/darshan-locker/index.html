@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Check how crowded a temple will be, then book a locker pass. Includes a staff dashboard with a 21-day crowd forecast.">
+<title>Darshan Locker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Yatra+One&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3c3 4.5 5 7 5 10a5 5 0 0 1-10 0c0-1.7.8-3 1.8-4.4.4 2 1.2 2.6 2 2.9C14.3 8.4 15 5.8 16 3Z" fill="currentColor"/><path d="M5 20h22c0 4.4-4.9 8-11 8S5 24.4 5 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Darshan Locker</span>
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" data-tab="book" aria-selected="true">Book a pass</button>
+      <button type="button" data-tab="passes" aria-selected="false">My passes</button>
+      <button type="button" data-tab="admin" aria-selected="false" id="tab-admin" hidden>Temple admin</button>
+    </nav>
+  </header>
+
+  <div id="banner"></div>
+
+  <section id="v-book">
+    <div class="intro">
+      <p class="eyebrow">Plan your darshan</p>
+      <h1>Check the crowd first, then reserve a locker for your visit.</h1>
+      <p>See how busy a temple is likely to be on each day and time slot. Pick a quiet hour, book a locker for shoes, phone and bags, and show your pass code at the counter.</p>
+    </div>
+    <div class="cols">
+      <div class="stack">
+        <div class="card">
+          <header><h2>1. Choose a temple</h2><span class="muted" id="tcount"></span></header>
+          <div class="filters">
+            <label for="st-state">State<select id="st-state"></select></label>
+            <label for="st-q">Search<input type="text" id="st-q" placeholder="Temple, city or deity" autocomplete="off"></label>
+          </div>
+          <div class="tlist" id="tlist"></div>
+        </div>
+        <div class="card">
+          <div class="thead" id="thead"></div>
+          <header><h2>2. Pick a day</h2><div class="legend" id="legend"></div></header>
+          <div class="dates" id="dates"></div>
+        </div>
+        <div class="card">
+          <header><h2>3. Pick a time slot</h2><span class="muted" id="slotnote"></span></header>
+          <div class="slots" id="slots"></div>
+        </div>
+      </div>
+      <aside class="card sticky" id="formcard" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="v-passes" hidden>
+    <div class="intro"><p class="eyebrow">Your bookings</p><h1>My passes</h1></div>
+    <div id="plist"></div>
+  </section>
+
+  <section id="v-admin" hidden>
+    <div class="intro"><p class="eyebrow">For temple staff</p><h1>Upcoming crowd and locker bookings</h1></div>
+    <div id="admin" class="stack"></div>
+  </section>
+
+  <p class="foot">Crowd levels combine a typical-day estimate for each temple (weekday, festival, aarti timings) with the passes booked here. Locker fees are paid at the counter. Only your first name and the last four digits of your phone number are saved with a pass.</p>
+</div>
+<p class="foot" id="demo-note" hidden>Demo mode: bookings are saved in this browser only. <button type="button" class="btn sm line" id="demo-admin"></button></p>
+<div id="tip" role="tooltip"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
